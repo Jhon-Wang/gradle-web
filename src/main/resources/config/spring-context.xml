@@ -7,8 +7,6 @@
     <context:property-placeholder ignore-resource-not-found="true"
                                   location="classpath:properties/application-local.properties"/>
 
-    <bean id="resultHandler" class="org.cs.utils.BaseHandler"/>
-
     <!-- 数据源配置, 使用 BoneCP 数据库连接池 -->
     <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
         <!-- 数据源驱动类可不写，Druid默认会自动根据URL识别DriverClass -->
@@ -46,7 +44,7 @@
         <property name="basePackage" value="org.cs.**.dao"/>
     </bean>
 
-    <context:component-scan base-package="org.cs" use-default-filters="false">
+    <context:component-scan base-package="org.cs" use-default-filters="true">
         <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
     </context:component-scan>
 

@@ -1,9 +1,10 @@
-package org.cs.utils;
+package org.cs.base;
 
 import com.alibaba.fastjson.JSON;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.core.MethodParameter;
+import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.context.request.NativeWebRequest;
@@ -19,12 +20,14 @@ import javax.servlet.http.HttpServletResponse;
  * @author wangjunjun
  * @date 2018/12/5
  */
+@Component
 public class BaseHandler implements HandlerMethodReturnValueHandler {
 
     Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Override
     public boolean supportsReturnType(MethodParameter returnType) {
+        logger.info("是否支持");
         Class<?> controllerClass = returnType.getContainingClass();
         returnType.getMethodAnnotation(ResponseBody.class);
 

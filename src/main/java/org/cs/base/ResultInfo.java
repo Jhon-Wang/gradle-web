@@ -1,4 +1,4 @@
-package org.cs.utils;
+package org.cs.base;
 
 import lombok.Data;
 

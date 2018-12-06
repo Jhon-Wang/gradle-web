@@ -10,12 +10,14 @@
           http://www.springframework.org/schema/mvc
            http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
-    <bean id="resultHandler" class="org.cs.utils.BaseHandler"/>
+    <mvc:annotation-driven >
+        <mvc:return-value-handlers>
+            <bean name="baseHandler" class="org.cs.base.BaseHandler"/>
+        </mvc:return-value-handlers>
+    </mvc:annotation-driven>
 
-    <context:component-scan base-package="org.cs.*.controller">
+    <context:component-scan base-package="org.cs.*.controller" use-default-filters="false">
         <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller" />
     </context:component-scan>
-
-    <mvc:annotation-driven />
 
 </beans>

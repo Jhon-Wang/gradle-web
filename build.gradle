@@ -32,3 +32,7 @@ dependencies {
             "org.apache.tomcat.embed:tomcat-embed-logging-juli:${tomcatVersion}",
             "org.apache.tomcat.embed:tomcat-embed-jasper:${tomcatVersion}"
 }
+
+tomcatRun {
+    httpPort = 8083
+}
