@@ -2,6 +2,7 @@ package org.cs.blog.controller;
 
 import org.apache.ibatis.annotations.Param;
 import org.cs.base.annotation.Translation;
+import org.cs.base.exception.BusException;
 import org.cs.blog.entity.Blog;
 import org.cs.blog.service.BlogServer;
 import org.cs.base.BaseController;
@@ -21,12 +22,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @Controller
 @RequestMapping("/blogController")
-@Translation
 public class BlogController extends BaseController {
 
     Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    @Autowired(required = false)
+    @Autowired
     private BlogServer blogServer;
 
     @GetMapping("/getBlogName")

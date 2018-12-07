@@ -1,6 +1,8 @@
 package org.cs.base;
 
 import com.alibaba.fastjson.JSON;
+import org.cs.base.annotation.Translation;
+import org.cs.base.exception.BusException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
 import javax.servlet.http.HttpServletRequest;
@@ -14,6 +16,7 @@ import java.io.IOException;
  * @author wangjunjun
  * @date 2018/12/6
  */
+@Translation
 public class BaseController {
 
     @ExceptionHandler
