@@ -13,7 +13,7 @@ def servletVersion = '4.0.1'
 def springVersion = '5.1.3.RELEASE'
 def lombokVersion = '1.18.4'
 def mybatisSpringVersion = '1.3.2'
-def mybaitsVersion = '3.4.6'
+def mybatisVersion = '3.4.6'
 def mysqlJdbcVersion = '8.0.13'
 def druidVersion = '1.1.12'
 def slf4jVersion = '1.7.25'
@@ -32,7 +32,7 @@ dependencies {
     compile group: 'org.springframework', name: 'spring-webmvc', version: springVersion
     compile group: 'org.springframework', name: 'spring-jdbc', version: springVersion
     compile group: 'org.mybatis', name: 'mybatis-spring', version: mybatisSpringVersion
-    compile group: 'org.mybatis', name: 'mybatis', version: mybaitsVersion
+    compile group: 'org.mybatis', name: 'mybatis', version: mybatisVersion
     compile group: 'mysql', name: 'mysql-connector-java', version: mysqlJdbcVersion
     compile group: 'com.alibaba', name: 'druid', version: druidVersion
     compile group: 'org.slf4j', name: 'slf4j-api', version: slf4jVersion
