@@ -10,8 +10,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Map;
 
 /**
  * Copyright © 2018 pagoda Inc.
@@ -29,19 +30,11 @@ public class BlogController extends BaseController {
     @Autowired
     private BlogServer blogServer;
 
-    @GetMapping("/getBlogName")
-    public String getBlogName(@Param("id") String id){
+    @PostMapping("/getBlogName")
+    public String getBlogName(@RequestBody Map<String,String> params){
+        String id = params.get("id");
         logger.info("请求参数为:"+id);
         return blogServer.getBlogName(id);
-    }
-
-    @GetMapping("/hello")
-    public Blog hello(){
-        logger.info("请求hello");
-        Blog blog = new Blog();
-        blog.setId("1");
-        blog.setName("HELLO WORLD");
-        return blog;
     }
 
 }
